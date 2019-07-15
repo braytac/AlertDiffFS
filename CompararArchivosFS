@@ -1,0 +1,20 @@
+cd /var/www/intranet
+
+./last_mod > lastmod_actual.log
+
+diferencia=$(diff lastmod_actual.log lastmod_referencia.log)
+
+if [ ! -z "$diferencia" ]
+then 
+
+	echo -e "Hay diferencias. Enviando email...\n"
+
+
+/usr/sbin/sendmail "sistemas@ing.unlp.edu.ar" <<EOF
+subject: Alerta diferencia de archivos en FS!!
+
+$diferencia
+EOF
+
+#  printf "$diferencia"
+fi
