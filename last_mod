@@ -1,0 +1,21 @@
+echo -e "\n####################### SITIO 1 #######################\n"
+cd /var/www/sitio1
+find . -regex ".*\.\(sh\|py\|pyc\|exe\|php\|js\)"  -type f -printf '%TY-%Tm-%Td %.8TT %s %p\n' | sort -r | head -n 50
+echo -e "\n########################################################\n"
+
+echo -e "\n####################### SITIO 2 #######################\n"
+cd /var/www/sitio2
+find . -regex ".*\.\(sh\|py\|pyc\|exe\|php\|js\)"  -type f -printf '%TY-%Tm-%Td %.8TT %s %p\n' | sort -r | head -n 50
+echo -e "\n########################################################\n"
+
+echo -e "\n####################### SITIO 3 #######################\n"
+cd /var/www/sitio3
+find . -regex ".*\.\(sh\|py\|pyc\|exe\|php\|js\)"  -type f -printf '%TY-%Tm-%Td %.8TT %s %p\n' | sort -r | head -n 50
+echo -e "\n########################################################\n"
+
+echo -e "\n####################### SITIO 4  #######################\n"
+cd /var/www/sitio4
+find . -regex ".*\.\(sh\|py\|pyc\|exe\|php\|js\)"  -type f -printf '%TY-%Tm-%Td %.8TT %s %p\n' | sort -r | head -n 50
+echo -e "\n########################################################\n"
+
+# sacar ext. de interés: find . -type f | sort | sed 's/.*\.//' | sort | uniq -c | sort -n
